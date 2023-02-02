@@ -6,6 +6,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:ticketbook_app/screens/hotels_view.dart';
 import 'package:ticketbook_app/screens/ticket_view.dart';
 import 'package:ticketbook_app/utils/app_styles.dart';
+import 'package:ticketbook_app/utils/info_list.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -97,12 +98,7 @@ class HomeScreen extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 19),
             child: Row(
-              children: [
-                
-                const TicketView(),
-                const TicketView(),
-                const TicketView()
-              ],
+              children: tikcetinfolist.map((e) => TicketView(ticketinfo: e)).toList()
             ),
           )
           ,
@@ -124,9 +120,9 @@ class HomeScreen extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           padding: const EdgeInsets.only(left: 19),
           child: Row(
-            children: [
-            HotelView(),HotelView(),HotelView()
-          ],)
+            children: hotelinfolist.map((e) => HotelView(hotelinfo: e)).toList()
+            
+            ,)
          )
 
         ],

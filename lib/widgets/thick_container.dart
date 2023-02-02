@@ -10,7 +10,7 @@ class CircularContain extends StatelessWidget {
   Widget build(BuildContext context) {
       return Container(
         padding: const EdgeInsets.all(3.0),
-      decoration:  BoxDecoration(
+        decoration:  BoxDecoration(
         borderRadius: BorderRadius.circular(19),
         border: Border.all(width: 2.5,color: Colors.white)
 
