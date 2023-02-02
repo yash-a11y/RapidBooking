@@ -7,11 +7,17 @@ import 'package:ticketbook_app/utils/app_styles.dart';
 import 'package:ticketbook_app/widgets/thick_container.dart';
 
 class TicketView extends StatelessWidget {
-  const TicketView({super.key});
+  final Map<String,dynamic> ticketinfo;
+  
+  const TicketView({Key ? key, required this.ticketinfo}) : super(key : key);
 
   @override
   Widget build(BuildContext context) {
     
+    final Map<String,dynamic> infofrom = ticketinfo['from'];
+    final Map<String,dynamic> infoto = ticketinfo['to'];
+
+    print(ticketinfo);
       final size = AppLay.getSize(context); 
 
     return SizedBox(
@@ -39,7 +45,7 @@ class TicketView extends StatelessWidget {
             child:Column(children: [
               Row(
                 children: [
-                  Text("NYC",style: Styles.smallheadlinestyle.copyWith(color: Colors.white),),
+                  Text("${infofrom['code']}",style: Styles.smallheadlinestyle.copyWith(color: Colors.white),),
                   const Spacer(),
                   const CircularContain(),
                    Expanded(child: Stack(
@@ -72,7 +78,7 @@ class TicketView extends StatelessWidget {
 
                   const Spacer(),
                   
-                  Text("UK",style: Styles.smallheadlinestyle.copyWith(color: Colors.white),)
+                  Text("${infoto['code']}",style: Styles.smallheadlinestyle.copyWith(color: Colors.white),)
                 ],
               )
            
@@ -81,13 +87,13 @@ class TicketView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               
               children: [
-                SizedBox(width: 100,child: Text("NEW-YORK",style: Styles.smallheadlinestyle1.copyWith(color: Colors.white),textAlign: TextAlign.start,))
+                SizedBox(width: 100,child: Text("${infofrom['name']}",style: Styles.smallheadlinestyle1.copyWith(color: Colors.white),textAlign: TextAlign.start,))
               ,
              
-              Text("8H 30M",style: Styles.smallheadlinestyle1.copyWith(color: Colors.white),textAlign: TextAlign.center,)
+              Text("${ticketinfo['time']}",style: Styles.smallheadlinestyle1.copyWith(color: Colors.white),textAlign: TextAlign.center,)
               ,
             
-               SizedBox(width: 100,child: Text("LONDON",style: Styles.smallheadlinestyle1.copyWith(color: Colors.white),textAlign: TextAlign.end,))
+               SizedBox(width: 100,child: Text("${infoto['name']}",style: Styles.smallheadlinestyle1.copyWith(color: Colors.white),textAlign: TextAlign.end,))
                ]
             )]) 
              ,
@@ -103,7 +109,7 @@ class TicketView extends StatelessWidget {
               Row(
                
                 children:  [
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                     width: 10,
                     child: DecoratedBox(decoration: BoxDecoration(
@@ -119,7 +125,7 @@ class TicketView extends StatelessWidget {
                   ,
                   Expanded( 
                     child : Padding(
-                        padding: EdgeInsets.all(0),
+                        padding: const EdgeInsets.all(0),
                         child: SizedBox(
 
                       height: 24,
@@ -148,7 +154,7 @@ class TicketView extends StatelessWidget {
                   )
                  
                   ,
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                     width: 10,
                     child: DecoratedBox(decoration: BoxDecoration(
@@ -190,7 +196,7 @@ class TicketView extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                            Text("1 May", style: Styles.smallheadlinestyle.copyWith(color: Colors.white),),
+                            Text("${ticketinfo['date']}", style: Styles.smallheadlinestyle.copyWith(color: Colors.white),),
                             const SizedBox(height: 5),
                             Text("Date", style: Styles.smallheadlinestyle1.copyWith(color: Colors.white),),
                         ],
@@ -201,7 +207,7 @@ class TicketView extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text("09:00 PM", style: Styles.smallheadlinestyle.copyWith(color: Colors.white),)
+                          Text("${ticketinfo['dept_time']}", style: Styles.smallheadlinestyle.copyWith(color: Colors.white),)
                           ,
                            const SizedBox(height: 5),
                           Text("Depature Time", style: Styles.smallheadlinestyle1.copyWith(color: Colors.white),)
@@ -212,7 +218,7 @@ class TicketView extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          Text("25", style: Styles.smallheadlinestyle.copyWith(color: Colors.white),)
+                          Text("${ticketinfo['number']}", style: Styles.smallheadlinestyle.copyWith(color: Colors.white),)
                           ,
                            const SizedBox(height: 5),
                           Text("Number", style: Styles.smallheadlinestyle1.copyWith(color: Colors.white),)
