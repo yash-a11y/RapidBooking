@@ -16,6 +16,10 @@ class Styles{
     fontSize: 21,color: textcolor,fontWeight: FontWeight.bold);
     static TextStyle headlinestyle1 = TextStyle(
     fontSize: 17,color: textcolor,fontWeight: FontWeight.w500);
+    static TextStyle smallheadlinestyleb = TextStyle(
+    fontSize: 17,color: Colors.black,fontWeight: FontWeight.w500);
+    static TextStyle smallheadlinestylew = TextStyle(
+    fontSize: 14,color: Colors.white,fontWeight: FontWeight.w500);
     static TextStyle smallheadlinestyle = TextStyle(
     fontSize: 14,color: Colors.grey.shade500,fontWeight: FontWeight.w500);
      static TextStyle smallheadlinestyle1 = TextStyle(
