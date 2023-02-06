@@ -105,7 +105,7 @@ class HomeScreen extends StatelessWidget {
           Container(
 
               padding: const EdgeInsets.symmetric(horizontal: 19),
-              margin: const EdgeInsets.only(top: 39),
+              margin: const EdgeInsets.only(top: 30),
               child: Row(
             
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -116,6 +116,8 @@ class HomeScreen extends StatelessWidget {
           ),
 
           )
+          ,
+          const SizedBox(height: 10)
           
          , SingleChildScrollView(
           scrollDirection: Axis.horizontal,
