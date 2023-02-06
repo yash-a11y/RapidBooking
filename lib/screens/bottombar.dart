@@ -3,6 +3,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:ticketbook_app/screens/home_screen.dart';
+import 'package:ticketbook_app/screens/profile_section.dart';
 import 'package:ticketbook_app/screens/search_screen.dart';
 import 'package:ticketbook_app/screens/ticket_section.dart';
 
@@ -21,7 +22,7 @@ class _BottomBarState extends State<BottomBar> {
     const HomeScreen(),
     const SearchScreen(),
     const TicketSection(),
-    const Text("profile")
+    const ProfileView(),
  
   ];
 
